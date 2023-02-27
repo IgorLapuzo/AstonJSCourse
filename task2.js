@@ -1,20 +1,20 @@
 function getInterval(arr, from, to) {
-	let errorMessageArr = `В функцию getInterval были переданы невалидные параметры.
-		Параметр arr должен содержать только числовые значения`;
-	let errorMessageFrom = `В функцию getInterval были переданы невалидные параметры.
-		Параметр arr должен содержать только числовые значения`;
-	let errorMessageTo = `В функцию getInterval были переданы невалидные параметры.
-		Параметр to должен быть числом`;
+	const getErrorMessageArr = (paramName) => `В функцию getInterval были переданы невалидные параметры.
+		Параметр ${paramName} должен содержать только числовые значения`;
+	const getErrorMessage = (paramName) => `В функцию getInterval были переданы невалидные параметры.
+		Параметр ${paramName} должен быть числом`;
+		
+	const isNumber = (num) => !Number.isNaN(num) && typeof num === 'number';
+	const isNumberArray = (numberArr) => Array.isArray(numberArr) && !(numberArr.some((item) => !isNumber(item)));
 
-	if (arr.some(i => typeof i !== 'number')) {
-		throw new Error(errorMessageArr);
+	const errorHandling = (arr, from, to) => {
+  	if (!isNumberArray(arr)) throw new Error(getErrorMessageArr('arr'));
+  	if (!isNumber(from)) throw new Error(getErrorMessage('from'));
+  	if (!isNumber(to)) throw new Error(getErrorMessage('to'));
 	}
-	if (typeof from !== 'number') {
-		throw new Error(errorMessageFrom);
-	}
-	if (typeof to !== 'number') {
-		throw new Error(errorMessageTo);
-	}
+
+	errorHandling(arr, from, to)
+
 	if (from < to) {
 		return arr.filter(i => i >= from && i <= to);
 	}

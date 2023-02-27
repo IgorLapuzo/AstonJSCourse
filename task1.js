@@ -1,4 +1,8 @@
 function deepCopyObject(obj) {
+	if (obj === null 
+		|| typeof abj !== 'object' 
+		|| typeof obj === 'function'
+	) return obj;
 	let cloneObj = {};
 	for (let key in obj) {
 		if (typeof obj[key] === 'object' && !Array.isArray(obj[key])) {

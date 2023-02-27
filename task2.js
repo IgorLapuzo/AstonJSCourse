@@ -1,7 +1,14 @@
 function getNumberRadix(number, radix) {
+	const num = +number;
 	let errorMessage = 'Функция getNumberRadix была вызвана с некорректными параметрами.';
-	if (isNaN(number) || +number <= 0 || radix < 2 || radix > 16) {
-		throw Error(errorMessage);
-	}
-	return +number.toString(radix);
+	if (
+		Number.isNaN(num) || 
+		!Number.isInteger(num) ||
+		num < 0 || 
+		typeof radix !== 'number' ||
+		radix < 2 || 
+		radix > 16
+		) throw new Error(errorMessage);
+
+	return num.toString(radix);
 }

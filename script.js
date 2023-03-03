@@ -4,6 +4,37 @@ const DEFAULT_PROP = {
   trackLength: 800,
 	fuel: 5,
 };
+const defaultCar = { 
+  name: 'Без автомобиля',
+  fuel: 0,
+  lowFuelConsumption: 0,
+  durability: 0,
+  speed: 0,
+};
+const civilianCar = {
+  name: 'Гражданский автомобиль',
+  fuel: 2,
+  lowFuelConsumption: 2,
+  durability: 2,
+  speed: 4,
+}
+const sportCar = {
+  name: 'Спортивный автомобиль',
+  fuel: 2,
+  lowFuelConsumption: 1,
+  durability: 1,
+  speed: 6,
+}
+const militaryCar = {
+  name: 'Военный автомобиль',
+  fuel: 2,
+  lowFuelConsumption: 2,
+  durability: 4,
+  speed: 2,
+}
+const selectCar = document.querySelector('.select-car');
+const specifications = document.querySelector('specifications')
+const carType = document.querySelector('.car-type');
 
 class Car {
   constructor(name = 'New car') {
@@ -48,29 +79,29 @@ class Car {
 class Civilian extends Car {
   constructor(name = 'Гражданский автомобиль') {
     super(name);
-    this.fuel = 2;
-    this.lowFuelConsumption = 2;
-    this.durability = 2;
-    this.speed = 4;
+    this.fuel = civilianCar.fuel;
+    this.lowFuelConsumption = civilianCar.lowFuelConsumption;
+    this.durability = civilianCar.durability;
+    this.speed = civilianCar.speed;
   }
 }
 
 class Sport extends Car {
   constructor(name = 'Спортивный автомобиль') {
     super(name);
-    this.fuel = 2;
-    this.lowFuelConsumption = 1;
-    this.durability = 1;
-    this.speed = 6;
+    this.fuel = sportCar.fuel;
+    this.lowFuelConsumption = sportCar.lowFuelConsumption;
+    this.durability = sportCar.durability;
+    this.speed = sportCar.speed;
   }
 }
 
 class Military extends Car {
   constructor(name = 'Военный автомобиль') {
     super(name);
-    this.fuel = 2;
-    this.lowFuelConsumption = 2;
-    this.durability = 4;
-    this.speed = 2;
+    this.fuel = militaryCar.fuel;
+    this.lowFuelConsumption = militaryCar.lowFuelConsumption;
+    this.durability = militaryCar.durability;
+    this.speed = militaryCar.speed;
   }
 }

@@ -4,37 +4,37 @@ const DEFAULT_PROP = {
   trackLength: 800,
 	fuel: 5,
 };
-const defaultCar = { 
-  name: 'Без автомобиля',
-  fuel: 0,
-  lowFuelConsumption: 0,
-  durability: 0,
-  speed: 0,
-};
 const civilianCar = {
-  name: 'Гражданский автомобиль',
+  name: 'Гражданский',
   fuel: 2,
   lowFuelConsumption: 2,
   durability: 2,
   speed: 4,
 }
 const sportCar = {
-  name: 'Спортивный автомобиль',
+  name: 'Спортивный',
   fuel: 2,
   lowFuelConsumption: 1,
   durability: 1,
   speed: 6,
 }
 const militaryCar = {
-  name: 'Военный автомобиль',
+  name: 'Военный',
   fuel: 2,
   lowFuelConsumption: 2,
   durability: 4,
   speed: 2,
 }
+
 const selectCar = document.querySelector('.select-car');
+const gameSettings = document.querySelector('.game-settings');
 const specifications = document.querySelector('specifications')
 const carType = document.querySelector('.car-type');
+const confirmCar = document.querySelector('.confirm');
+const table = document.getElementsByTagName("td");
+
+let selectedCar = null;
+let userCar = null;
 
 class Car {
   constructor(name = 'New car') {
@@ -105,3 +105,51 @@ class Military extends Car {
     this.speed = militaryCar.speed;
   }
 }
+
+carType.addEventListener('click', (e)=> {
+  if (e.target.id === 'civilian') {
+    table[3].innerHTML = civilianCar.name;
+    table[5].innerHTML  = civilianCar.fuel;
+    table[7].innerHTML  = civilianCar.lowFuelConsumption;
+    table[9].innerHTML  = civilianCar.durability;
+    table[11].innerHTML  = civilianCar.speed;
+    selectedCar = e.target.id;
+  } 
+  if (e.target.id === 'sport') {
+    table[3].innerHTML = sportCar.name
+    table[5].innerHTML  = sportCar.fuel
+    table[7].innerHTML  = sportCar.lowFuelConsumption
+    table[9].innerHTML  = sportCar.durability
+    table[11].innerHTML  = sportCar.speed
+    selectedCar = e.target.id;
+  } 
+  if (e.target.id === 'military') {
+    table[3].innerHTML = militaryCar.name
+    table[5].innerHTML  = militaryCar.fuel
+    table[7].innerHTML  = militaryCar.lowFuelConsumption
+    table[9].innerHTML  = militaryCar.durability
+    table[11].innerHTML  = militaryCar.speed
+    selectedCar = e.target.id;
+  } 
+});
+
+confirmCar.addEventListener('click', (e)=> {
+  if (selectedCar === 'civilian') {
+    userCar = new Civilian();
+    console.log(userCar)
+    selectCar.classList.add('hidden');
+    gameSettings.classList.remove('hidden');
+  }
+  if (selectedCar === 'sport') {
+    userCar = new Sport();
+    console.log(userCar)
+    selectCar.classList.add('hidden');
+    gameSettings.classList.remove('hidden');
+  }
+  if (selectedCar === 'military') {
+    userCar = new Military();
+    console.log(userCar)
+    selectCar.classList.add('hidden');
+    gameSettings.classList.remove('hidden');
+  }
+});

@@ -9,7 +9,13 @@
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
-.select-car{
+.select-car {
+ 
+}
+.game-settings {
+  
+}
+.modal{
   position: absolute;
   background-color: #bf5656;
   left: 50%;
@@ -31,13 +37,18 @@
   box-shadow: 0 5px 5px #777;
 }
 table {
-	width: 400px;
+	width: 600px;
 	margin: auto;
+  table-layout: fixed;
+}
+.col2 {
+  width: 200px; 
+  
 }
 
 td, tr {
 	padding: 2px;
-	border: 3px, solid white;
+  
 }
 button {
   padding: 7px;
@@ -52,4 +63,7 @@ button {
 }
 .confirm {
 	margin-top: 10px;
+}
+.hidden {
+  visibility: hidden;
 }

@@ -1,55 +1,61 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Гонка на выживание</title> 
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
-</head>
-<body>
-  <div class="background">
-    <div class="tournamentTable"></div>
-    <div class="select-car">
-      <p>Гонки на выживание</p>
-			<p>Выберите машину</p>
-			<div class = "specification-table-wrapper">
-				<table class="specifications-table">
-					<tr>
-						<td>Характеристика</td>
-						<td>Значение</td>
-					</tr>
-					<tr>
-						<td>Тип автомобиля</td>
-						<td id="name">0</td>
-					</tr>
-					<tr>
-						<td>Топливо</td>
-						<td id="fuel">0</td>
-					</tr>
-					<tr>
-						<td>Экономичность</td>
-						<td id="lowFuelConsumption">0</td>
-					</tr>
-					<tr>
-						<td>Прочность</td>
-						<td id="durability">0</td>
-					</tr>
-					<tr>
-						<td>Скорость</td>
-						<td id="speed">0</td>
-					</tr>
-				</table>
+	<head>
+  	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<title>Гонка на выживание</title> 
+  	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+  	<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+  	<div class="background">
+    	<div class="tournamentTable"></div>
+    	<div class="select-car modal">
+     	 <p>Гонки на выживание</p>
+				<p class="textChoseCar">Выберите машину</p>
+				<p class="textImpruveCar">Прокачай тачку</p>
+				<div class = "specification-table-wrapper">
+					<table class="specifications-table">
+						<tr>
+							<td>Характеристика</td>
+							<td>Значение</td>
+						</tr>
+						<tr>
+							<td>Тип автомобиля:</td>
+							<td id="type">0</td>
+						</tr>
+						<tr>
+							<td>Топливо:</td>
+							<td id="fuel">0</td>
+						</tr>
+						<tr>
+							<td>Экономичность:</td>
+							<td id="lowFuelConsumption">0</td>
+						</tr>
+						<tr>
+							<td>Прочность:</td>
+							<td id="durability">0</td>
+						</tr>
+						<tr>
+							<td>Скорость:</td>
+							<td id="speed">0</td>
+						</tr>
+					</table>
+				</div>
+      	<span class="car-type">
+        	<button id="civilian">Гражданская</button>
+       	 	<button id="sport">Спортивная</button>
+        	<button id="military">Военная</button>
+      	</span>
+				<div>
+					<button class="confirm">Продолжить</button>
+				</div>
+    	</div>
+			<div class="game-settings modal hidden">
+				<p>Гонки на выживание</p>
+				<p>Выберите количество соперников</p>
 			</div>
-      <span class="car-type">
-        <button id="civilian">Гражданская</button>
-        <button id="sport">Спортивная</button>
-        <button id="military">Военная</button>
-      </span>
-			<div>
-				<button class="confirm">Продолжить</button>
-			</div>
-    </div>
-    <script src="#"></script>
-</body>
+
+    	<script src="./script.js"></script>
+	</body>
 </html>

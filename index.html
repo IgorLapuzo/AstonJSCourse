@@ -11,34 +11,50 @@
   	<div class="background">
     	<div class="tournamentTable"></div>
     	<div class="select-car modal">
-     	 <p>Гонки на выживание</p>
-				<p class="textChoseCar">Выберите машину</p>
-				<p class="textImpruveCar">Прокачай тачку</p>
+     	 <p class="text-title">Гонки на выживание</p>
+				<p class="text-chose-car">Выберите машину</p>
+				<p class="text-impruve-car hidden">Прокачай тачку</p>
 				<div class = "specification-table-wrapper">
 					<table class="specifications-table">
+						<col style="width:70%">
+	          <col style="width:5%">
+	          <col style="width:20%">
+						<col style="width:5%">
 						<tr>
 							<td>Характеристика</td>
+							<td></td>
 							<td>Значение</td>
+							<td></td>
 						</tr>
 						<tr>
-							<td>Тип автомобиля:</td>
-							<td id="type">0</td>
+							<td>Тип авто:</td>
+							<td></td>
+							<td id="type">нет</td>
+							<td></td>
 						</tr>
 						<tr>
-							<td>Топливо:</td>
+							<td>Объем топливного бака:</td>
+							<td id="left-arrow-fuel hidden"></td>
 							<td id="fuel">0</td>
+							<td id="right-arrow-fuel hidden"></td>
 						</tr>
 						<tr>
-							<td>Экономичность:</td>
+							<td>Коэф. оптимизации расхода топлива:</td>
+							<td id="left-arrow-lowFuelConsumption hidden"></td>
 							<td id="lowFuelConsumption">0</td>
+							<td id="right-arrow-lowFuelConsumption hidden"></td>
 						</tr>
 						<tr>
-							<td>Прочность:</td>
+							<td>Коэф. прочности авто:</td>
+							<td id="left-arrow-durability hidden"></td>
 							<td id="durability">0</td>
+							<td id="right-arrow-durability hidden"></td>
 						</tr>
 						<tr>
-							<td>Скорость:</td>
+							<td>Коэф. увеличения скорости:</td>
+							<td id="left-arrow-speed hidden"></td>
 							<td id="speed">0</td>
+							<td id="right-arrow-speed hidden"></td>
 						</tr>
 					</table>
 				</div>

@@ -9,11 +9,10 @@
 	</head>
 	<body>
   	<div class="background">
-    	<div class="tournamentTable"></div>
     	<div class="select-car modal">
      	 <p class="text-title">Гонки на выживание</p>
 				<p class="text-chose-car">Выберите машину</p>
-				<p class="text-impruve-car hidden">Прокачай тачку</p>
+				<p class="text-impruve-car hidden">Прокачайте Вашу тачку</p>
 				<div class = "specification-table-wrapper">
 					<table class="specifications-table">
 						<col style="width:70%">
@@ -64,14 +63,44 @@
         	<button id="military">Военная</button>
       	</span>
 				<div>
-					<button class="confirm">Продолжить</button>
+					<button class="confirm-car hidden">Продолжить</button>
+					<button class="confirm-tuning hidden">Продолжить</button>
+					<button class="show-result-table hidden">Результат</button>
 				</div>
     	</div>
 			<div class="game-settings modal hidden">
 				<p>Гонки на выживание</p>
 				<p>Выберите количество соперников</p>
+				<table class="rivals-table">
+					<col style="width:5%">
+					<col style="width:20%">
+					<col style="width:5%">
+					<tr>
+						<td id="rivals-left"><</td>
+						<td id="rivals-number">0</td>
+						<td id="rivals-right">></td>
+					</tr>
+				</table>
+				<div>
+          <button class="confirm-rivals hidden">Результат</button>
+				</div>	
 			</div>
-
+      <div class="game-result modal hidden">
+				<p>Гонки на выживание</p>
+				<p>Таблица сравнения машин</p>
+				<table id="comparative-matrix">
+					<col style="width:25%">
+					<col style="width:25%">
+					<col style="width:25%">
+					<col style="width:25%">
+					<tr>
+						<td>Имя</td>
+						<td>Запас хода</td>
+						<td>Общая прочность</td>
+						<td>Общая скорость</td>
+					</tr>
+				</table>	
+			</div>
     	<script src="./script.js"></script>
 	</body>
 </html>
